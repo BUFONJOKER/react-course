@@ -4,25 +4,71 @@
       {
         "imports": {
           "react": "https://esm.sh/react@latest?dev",
-          "react-dom/client": "https://esm.sh/react-dom@latest/client?dev"
+          "react-dom/client": "https://esm.sh/react-dom@latest/client?dev",
+          "react/jsx-runtime": "https://esm.sh/react@latest/jsx-runtime?dev"
         }
       }
     </script>
+
+    <!-- Babel Standalone -->
+    <script src="https://unpkg.com/@babel/standalone@latest/babel.min.js"></script>
   </head>
   <body>
     <div id="app"></div>
-    <script type="text/javascript">
-      const app = document.getElementById("app");
+    <script type="text/babel" data-type="module" data-process="react">
+      import React from "react";
+      import { createRoot } from "react-dom/client";
 
-      const header = document.createElement("h1");
+      const domNode = document.getElementById("app");
 
-      const text = "Hello, World!";
+      function createTitle(title){
+        // if (title){
+        //   return title
+        // }
+        // else {
+        //   return 'Default Title'
+        // }
 
-      const headerContent = document.createTextNode(text);
+        return title ? title : "Default title";
+      }
 
-      header.appendChild(headerContent);
+      function Header({title}) {
+        // console.log(title)
+        // return <h1>{`Cool ${title}`}</h1>;
+        return <h1> {createTitle(title)} </h1>
+      }
 
-      app.appendChild(header);
+      function HomePage() {
+
+        const name = ['mani', 'rathore', 'kurrana']
+
+        return (
+          <div>
+           <Header title="REACT"/>
+           <Header title="REACT DOM"/>
+
+           <ul>
+            {name.map((name)=> <li key={name}>{name}</li>)}
+            </ul>
+
+        </div>
+        );
+      }
+
+      const root = createRoot(domNode);
+
+      root.render(<HomePage />);
+      // const app = document.getElementById("app");
+
+      // const header = document.createElement("h1");
+
+      // const text = "Hello, World!";
+
+      // const headerContent = document.createTextNode(text);
+
+      // header.appendChild(headerContent);
+
+      // app.appendChild(header);
     </script>
   </body>
 </html>
