@@ -1,4 +1,4 @@
-import {useState} from "react";
+import LikeButton from "./like-button";
 
 function createTitle(title) {
   // if (title){
@@ -20,11 +20,11 @@ function Header({ title }) {
 export default function HomePage() {
   const name = ["mani", "rathore", "kurrana"];
 
-  const [likes, setLikes] = useState(1);
+  // const [likes, setLikes] = useState(1);
 
-  function handleClick() {
-    setLikes(likes * 2);
-  }
+  // function handleClick() {
+  //   setLikes(likes * 2);
+  // }
 
   return (
     <div>
@@ -36,8 +36,8 @@ export default function HomePage() {
           <li key={name}>{name}</li>
         ))}
       </ul>
-
-      <button onClick={handleClick}>Like ({likes})</button>
+      <LikeButton />
+      {/* <button onClick={handleClick}>Like ({likes})</button> */}
     </div>
   );
 }
