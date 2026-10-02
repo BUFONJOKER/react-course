@@ -30,6 +30,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 🏆 Course Certificate
 
-![React Foundations certificate](https://nextjs.org/learn/certificate?course=react-foundations&user=173873&certId=react-foundations-173873-1790872940436)
+![React Foundations certificate](docs/react-foundations-certificate.png)
 
 [View the certificate](https://nextjs.org/learn/certificate?course=react-foundations&user=173873&certId=react-foundations-173873-1790872940436)
